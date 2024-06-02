@@ -29,7 +29,7 @@ jobs:
     steps:
       -
         name: Event
-        # This is a default environment variable present in all Actions.
+        # This is a default environment variable present in all Actions...
         run: echo "Triggered by: $GITHUB_EVENT_NAME"
       -
         name: Say Hello
