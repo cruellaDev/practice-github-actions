@@ -31,6 +31,7 @@ jobs:
         name: Event
         # This is a default environment variable present in all Actions.
         # run: echo "Triggered by: " $GITHUB_EVENT_NAME
+        # ????
         run : echo "repository variable :" $REPOSITORY_VAR
               echo GITHUB_ENV = $GITHUB_ENV
               echo GITHUB_ACTION = $GITHUB_ACTION
