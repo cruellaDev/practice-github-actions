@@ -1,0 +1,21 @@
+# https://www.actionsbyexample.com/actions.html
+name: actions-example
+on:
+  push:
+jobs:
+  use-actions:
+    runs-on: ubuntu-latest
+    steps:
+      # The checkout action checks out your repo into the working directory at the ref which triggered the workflow (e.g. a branch that was pushed).
+      - uses: actions/checkout@v2
+      # The setup-node action makes node and npm available in the following steps.
+      - uses: actions/setup-node@v1
+        # Some actions also have required or optional arguments.
+        with:
+          node-version: '15.8.0'
+      -
+        name: Install repo dependencies
+        run: npm install
+      -
+        name: Run script from repo
+        run: node helloWorld.js
