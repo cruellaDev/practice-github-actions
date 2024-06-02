@@ -1,9 +1,13 @@
 # This is a basic workflow to help you get started with Actions
+# This example workflow prints “Hello world”, followed by “Step 1…”, “Step 2…”, “Step 3…”, and finally “Goodbye”.
+# https://www.actionsbyexample.com/hello-world.html
 
 name: hello-world-example
 
 # Controls when the workflow will run
+# We must specify what events trigger the workflow to run.
 on:
+  # In this case we run it every time someone pushes to the repo.
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
@@ -15,14 +19,20 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+    # A job specifies a sequence of commands. We named this job say-hello.
     say-hello:
+        # jobs can run on different machines.
         runs-on: ubuntu-latest
+        # steps is a list of commands to run.
         steps:
           -
             name: Say Hello
             run: echo "Hello world!"
           -
+            # Finally, do stuff! Run a command using the operating system’s shell.
             name: Do stuff
+            # Use the pipe, |, to start a multiline string in yaml.
+            # This allows us to write easily readable multistep code
             run: |
               echo "Step 1..."
               echo "Step 2..."
